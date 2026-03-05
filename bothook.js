@@ -1,4 +1,10 @@
 const mineflayer = require('mineflayer')
+const http = require('http')
+
+http.createServer((req,res) => {
+    res.write('Bot is alive')
+    res.end()
+}).listen(8080)
 
 function createBot() {
     const bot = mineflayer.createBot({
@@ -23,5 +29,6 @@ function createBot() {
         setTimeout(createBot, 30000)
     })
 }
+
 
 createBot()
